@@ -32,6 +32,12 @@ var ages=arrayCalc(years,calculateAge);
 var fullAges=arrayCalc(ages,isFullAge);
 var rates=arrayCalc(ages,maxHeartRate);
 
+var fullJapan=arrayCalc(ages,isFullAge.bind(this,20));
+
+
 console.log(ages);
+console.log('japon');
+console.log(fullJapan);
+
 console.log(fullAges);
 console.log(rates);
