@@ -1,4 +1,5 @@
-function Question(question,answer,correct){
+(function(){
+    function Question(question,answer,correct){
     this.question=question;
     this.answers=answer;
     this.correct=correct;
@@ -12,6 +13,14 @@ Question.prototype.displayQuestion=
         }
     }
 
+Question.prototype.checkAnswer=function(ans){
+    if(ans===this.correct){
+        console.log('Correct answer!');
+    }else{
+        console.log('Wrong answer. Try again :)');
+    }
+}
+
 
 var q1=new Question('Is JavaScript the coolest programming langulage in the world?', 
                    ['Yes','No'],0);
@@ -22,7 +31,37 @@ var q2=new Question('What is the name this course\'s teacher?',
 var q3=new Question('What does best describe coding',
                    ['Boring','hard','Fun','Tediuos'],2);
 
-var questions=[q1,q2,q3];
-var n=Math.floor(Math.random() * questions.length);
+function nextQuestion(){
+        
+    var questions=[q1,q2,q3];
+    var n=Math.floor(Math.random() * questions.length);
 
-questions[n].displayQuestion();
+    questions[n].displayQuestion();
+
+    var answer=parseInt(prompt('Please select the correct answer'));
+
+    questions[n].checkAnswer(answer);
+    
+    
+    if(answer!=='exit'){
+         nextQuestion();
+    }
+       
+}
+    
+nextQuestion();
+    
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
