@@ -1,0 +1,20 @@
+https://portswigger.net/burp
+https://www.getfirebug.com/
+live http header (firefox Eklentisi)
+www.mavitunasecurity.com
+
+//MVC
+var budgetController=(function(){
+    
+    
+})();
+
+var UIController=(function(){
+    
+    
+})();
+
+var controller=(function(budgetCtrl,UICtrl){
+    
+    
+})(budgetController,UIController);
